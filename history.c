@@ -62,7 +62,7 @@ void add_root_handle(struct Msg *msg,char*name)
 			add_sql_history(history);
 		break;
 	case 'h':
-		sprintf(history->word,"添加信息失败,学号:%s已存在\n",msg->info.num);
+		sprintf(history->word,"添加信息失败,学号:%s已存在",msg->info.num);
 			add_sql_history(history);
 		break;
 	case 'q':
