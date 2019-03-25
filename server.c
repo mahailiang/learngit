@@ -241,7 +241,7 @@ void get_history_value(History *history,char**f_value)
 }
 int do_put_history(void *arg,int ncolum,char **f_value,char **f_name)
 {
-	printf("开始发送历史信息\n");
+	//printf("开始发送历史信息\n");
 	struct Find *find = (struct Find *)(arg);
 	int i = 0;
 	if(0 == flag)
@@ -253,11 +253,6 @@ int do_put_history(void *arg,int ncolum,char **f_value,char **f_name)
 	}
 		find->history.type = 'y';
 	get_history_value(&(find->history),f_value);
-	for(i = 0; i < ncolum; i++)
-	{
-		printf("%-15s",f_value[i]);
-	}
-	
      printf("%s,%s,%s\n",find->history.word,find->history.timedata,find->history.name);
 int ret;
 	 if((ret = send(find->acceptfd,&(find->history),sizeof(struct History),0)) == -1)
@@ -265,8 +260,8 @@ int ret;
 		perror("send history error");
 		return ERROR;
 	}
-	printf("sizeof = %d,ret = %d",sizeof(struct History),ret);
-	printf("成功发送一次,%c\n",find->history.type);
+	//printf("sizeof = %d,ret = %d",sizeof(struct History),ret);
+	//printf("成功发送一次,%c\n",find->history.type);
 	usleep(20000);
 	printf("\n");
 	return 0;
