@@ -1,3 +1,5 @@
-Git is a version control system.
-Git is free software.
-45斤斤计较军军哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或
+这是一个队员管理系统
+
+一个服务器端多个客户端
+  运行时 ./server 192.168.1.245 5001
+        ./client 192.168.1.245 5001
